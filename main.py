@@ -1,4 +1,5 @@
 import praw 
+from sorting import Sorting
 
 # Reddit API
 reddit = praw.Reddit(
@@ -10,4 +11,28 @@ reddit = praw.Reddit(
 running = True
 
 while running:
-    subreddit = input("Which subreddit would you like to scrape?")
+    subredditName = input("Which subreddit would you like to scrape? ")
+    incorrectSorting = True
+    
+    # Get the sorting type
+    while incorrectSorting:
+        sorting = input("What would you like to sort by? Options are New, Hot, Top, or Controversial: ") # Has to be one of New, Hot, Top, Controversial
+        if sorting == "New" or sorting == "Hot" or sorting == "Top" or sorting == "Controversial":
+            incorrectSorting = False
+        else:
+            print("Incorrect choice")
+
+    numPosts = input("How many posts would you like? ")
+
+
+    if sorting == "New":
+        
+    elif sorting == "Hot":
+
+    elif sorting == "Top":
+
+    elif sorting == "Controversial":
+
+    
+
+
