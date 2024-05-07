@@ -42,6 +42,7 @@ while running:
     counter = 0
     for post in posts:
         print(f"Post Title {counter}: ", post.title)
+        print("-------------------------------")
         counter += 1
 
     # Ask user if they want more information about a certain post
@@ -72,8 +73,12 @@ while running:
                 # Get the top 10 comments
                 comments = posts[postInterest].comments[:10]
                 print(f"The top comments of post {postInterest} are: ")
+                commentNum = 0
                 for comment in comments:
+                    print (f"Comment {commentNum}: ")
                     print(f"{comment.body}")
+                    print("-------------------------------")
+                    commentNum += 1
 
 
     again = input("\nWould you like to scrape another subreddit? (yes/no) ").strip().lower()
