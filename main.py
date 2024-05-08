@@ -111,11 +111,13 @@ while running:
         if numPosts != 0:
             print("RECENT POSTS")
             print("-------------------------------")
+            counter = 1
             for post in user.submissions.new(limit = numPosts):
                 print(f"Post {counter}")
                 print(f"Title: {post.title}")
                 print(f"Score: {post.score}")
                 print("-------------------------------")
+                counter += 1
         else:
             print("This user has not made any posts.")
 
@@ -131,9 +133,13 @@ while running:
         if numComments != 0:
             print("RECENT COMMENTS")
             print("-------------------------------")
+            counter = 1
             for comment in user.comments.new(limit = numComments):
+                print(f"Comment {counter}")
                 print(f"Subreddit: {comment.subreddit.display_name}")
                 print(f"Comment: {comment.body}")
+                print("-------------------------------")
+                counter += 1
         else:
             print("This user has not made any comments.")
 
